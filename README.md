@@ -1,0 +1,2 @@
+# Pretty Difference
+A highly underestimated feature of Scala is the pprint function, combined with case cases. Having a case class instance prettty printed is great help during debugging or for logging. Sometimes you have an instance large, nested case case and you want to compare it with another case case, for example to figure out why something that seems equal isn't. Having a diff tool would be great. In this project will allow you to quickly view the difference between two case class instances.
