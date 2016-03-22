@@ -1,8 +1,11 @@
 package pretty
 
+import java.time.LocalDate
+
 import shapeless._
 
-case class User(name:String, lastname:String)
+case class Address(street:String, city:String)
+case class User(name:String, lastName:String, birthDate:LocalDate, address:Address)
 
 object CaseClassDiff  extends App{
   private implicit def fooIso = Generic[User]
@@ -20,6 +23,6 @@ object CaseClassDiff  extends App{
     diff(v1, v2)
   }
 
-  println(s"Difference ${difference(User("a", "b"), User("a", "c"))}")
+  println(s"Difference ${difference(User("John", "Doe", LocalDate.of(1983,5,12), Address("Mainstreet 5", "Metropolis")), User("Jane", "Doe", LocalDate.of(1983,3,30), Address("Mainstreet 6", "Metropolis")))}")
 
 }
