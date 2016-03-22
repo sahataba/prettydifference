@@ -2,8 +2,8 @@ import sbt.Keys._
 import sbt._
 
 object BuildSettings {
-  val buildOrganization = "com.klooker"
-  val buildVersion = "0.38"
+  val buildOrganization = "squads.com"
+  val buildVersion = "0.1"
   val buildScalaVersion = "2.11.8"
 
   val buildSettings = Defaults.defaultSettings ++ Seq(
@@ -35,7 +35,7 @@ object ThisBuild extends Build {
   lazy val switchOffInConsole = Set("-Xfatal-warnings", "-Ywarn-unused", "-Ywarn-unused-import")
 
   lazy val api = Project(
-    "klooker-api", file("."),
+    "prettydifference", file("."),
     settings = buildSettings
       ++ Seq(resolvers := repositories, libraryDependencies ++= dependencies)
   ).configs(IntegrationTest)
