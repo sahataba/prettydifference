@@ -3,6 +3,7 @@ package pretty
 import java.time.LocalDate
 
 import shapeless._
+import pprint.Config.Colors._
 
 trait EQQ
 case class Different(value:String) extends EQQ
@@ -27,6 +28,11 @@ object CaseClassDiff  extends App{
     diff(v1, v2)
   }
 
-  println(s"Difference ${difference(User("John", "Doe", LocalDate.of(1983,5,12), Address("Mainstreet 5", "Metropolis")), User("Jane", "Doe", LocalDate.of(1983,3,30), Address("Mainstreet 6", "Metropolis")))}")
+  val res =
+    difference(
+      User("John", "Doe", LocalDate.of(1983,5,12), Address("Mainstreet 5", "Metropolis")),
+      User("Jane", "Doe", LocalDate.of(1983,3,30), Address("Mainstreet 6", "Metropolis")))
+
+  pprint.pprintln(res)
 
 }

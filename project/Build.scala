@@ -23,7 +23,7 @@ object Resolvers {
 
 
 object Dependencies {
-  val dependencies = Seq("com.chuusai" %% "shapeless" % "2.3.0")
+  val dependencies = Seq("com.chuusai" %% "shapeless" % "2.3.0", "com.lihaoyi" %% "pprint" % "0.4.0")
 }
 
 object ThisBuild extends Build {
